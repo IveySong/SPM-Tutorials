@@ -4,7 +4,7 @@
 % cfg_basicio BasicIO - Unknown
 %-----------------------------------------------------------------------
 clear; clc;
-subjects = [6];
+subjects = [1 2 3 4 6];
 
 for subject = subjects
     subject = num2str(subject,'%2d');
@@ -811,14 +811,6 @@ for subject = subjects
     matlabbatch{10}.spm.stats.fmri_est.spmmat(1) = cfg_dep('fMRI model specification: SPM.mat File', substruct('.','val', '{}',{9}, '.','val', '{}',{1}, '.','val', '{}',{1}), substruct('.','spmmat'));
     matlabbatch{10}.spm.stats.fmri_est.write_residuals = 1;
     matlabbatch{10}.spm.stats.fmri_est.method.Classical = 1;
-    matlabbatch{11}.spm.stats.con.spmmat(1) = cfg_dep('Model estimation: SPM.mat File', substruct('.','val', '{}',{10}, '.','val', '{}',{1}, '.','val', '{}',{1}), substruct('.','spmmat'));
-    matlabbatch{11}.spm.stats.con.consess{1}.tcon.name = 'Faces>Houses';
-    matlabbatch{11}.spm.stats.con.consess{1}.tcon.weights = [1 -1 0 0 0 0 0 0 1 -1 0 0 0 0 0 0 1 -1 0 0 0 0 0 0 1 -1 0 0 0 0 0 0 1 -1 0 0 0 0 0 0 1 -1 0 0 0 0 0 0 1 -1 0 0 0 0 0 0 1 -1 0 0 0 0 0 0 1 -1 0 0 0 0 0 0 1 -1 0 0 0 0 0 0 1 -1 0 0 0 0 0 0 1 -1 0 0 0 0 0 0];
-    matlabbatch{11}.spm.stats.con.consess{1}.tcon.sessrep = 'replsc';
-    matlabbatch{11}.spm.stats.con.consess{2}.tcon.name = 'Houses>Faces';
-    matlabbatch{11}.spm.stats.con.consess{2}.tcon.weights = [-1 1 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 -1 1 0 0 0 0 0 0];
-    matlabbatch{11}.spm.stats.con.consess{2}.tcon.sessrep = 'replsc';
-    matlabbatch{11}.spm.stats.con.delete = 0;
 
     spm_jobman('run', matlabbatch);
 

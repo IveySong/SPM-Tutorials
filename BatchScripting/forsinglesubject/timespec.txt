@@ -1,0 +1,8 @@
+face(12,:);
+house(12,:);
+cat(12,:);
+bottle(12,:);
+scissors(12,:);
+shoe(12,:);
+chair(12,:);
+scrambledpix(12,:);
